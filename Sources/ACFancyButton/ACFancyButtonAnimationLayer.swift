@@ -15,13 +15,13 @@ private struct ACFBLayerConstant {
          UIColor(red: 224/255.0, green: 24/255.0, blue: 24/255.0, alpha: 1.0).cgColor],
         
         [UIColor(red: 255/255.0, green: 252/255.0, blue: 103/255.0, alpha: 1.0).cgColor,
-         UIColor(red: 69/255.0, green: 20/255.0, blue: 119/255.0, alpha: 1.0).cgColor],
+         UIColor(red: 30/255.0, green: 41/255.0, blue: 129/255.0, alpha: 1.0).cgColor],
         
         [UIColor(red: 236/255.0, green: 54/255.0, blue: 220/255.0, alpha: 1.0).cgColor,
-         UIColor(red: 166/255.0, green: 155/255.0, blue: 102/255.0, alpha: 1.0).cgColor],
+         UIColor(red: 255/255.0, green: 148/255.0, blue: 0/255.0, alpha: 1.0).cgColor],
         
         [UIColor(red: 130/255.0, green: 110/255.0, blue: 107/255.0, alpha: 1.0).cgColor,
-         UIColor(red: 95/255.0, green: 11/255.0, blue: 68/255.0, alpha: 1.0).cgColor],
+         UIColor(red: 24/255.0, green: 91/255.0, blue: 22/255.0, alpha: 1.0).cgColor],
         
         [UIColor(red: 143/255.0, green: 4/255.0, blue: 15/255.0, alpha: 1.0).cgColor,
          UIColor(red: 156/255.0, green: 200/255.0, blue: 230/255.0, alpha: 1.0).cgColor]
