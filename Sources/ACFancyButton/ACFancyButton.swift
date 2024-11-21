@@ -9,16 +9,31 @@ import UIKit
 
 open class ACFancyButton: UIControl {
     
-    // MARK: public
     public func startAnimation() {
         bgLayer.startAnimation()
     }
     public func stopAnimation() {
         bgLayer.stopAnimation()
     }
+    
+    public var buttonCornerRadius: CGFloat?
+    
+    public var animationDuration: CGFloat? {
+        didSet{
+            if let duration = animationDuration  {
+                bgLayer.animationDuration = duration
+            }
+        }
+    }
+    public var bakedColors: [[CGColor]]? {
+        didSet{
+            if let colors = bakedColors  {
+                bgLayer.bakedColors = colors
+            }
+        }
+    }
 
     
-    // MARK: property
     public var imageViewScale: CGFloat = 1.0 {
         didSet{
             if imageViewScale < 0.0 {
@@ -28,8 +43,10 @@ open class ACFancyButton: UIControl {
             }
         }
     }
+    
     public let imageView: UIImageView = UIImageView(frame: .zero)
-    var bgLayer: ACFancyButtonAnimationLayer = ACFancyButtonAnimationLayer()
+    
+    let bgLayer: ACFancyButtonAnimationLayer = ACFancyButtonAnimationLayer()
 
     // MARK: Life Cycle
     deinit {
@@ -37,7 +54,6 @@ open class ACFancyButton: UIControl {
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupSubviews()
@@ -55,7 +71,10 @@ open class ACFancyButton: UIControl {
         }
         
         bgLayer.frame = bounds
-        bgLayer.cornerRadius = (bounds.size.height / 2.0)
+        
+
+        let theCornerRadius = buttonCornerRadius ?? (bounds.size.height / 2.0)
+        bgLayer.cornerRadius = theCornerRadius
     }
 }
 
