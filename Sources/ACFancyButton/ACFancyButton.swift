@@ -7,13 +7,13 @@
 
 import UIKit
 
-class ACFancyButton: UIControl {
+open class ACFancyButton: UIControl {
     
     // MARK: public
-    func startAnimation() {
+    public func startAnimation() {
         bgLayer.startAnimation()
     }
-    func stopAnimation() {
+    public func stopAnimation() {
         bgLayer.stopAnimation()
     }
 
@@ -34,7 +34,7 @@ class ACFancyButton: UIControl {
     // MARK: Life Cycle
     deinit {
     }
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -43,7 +43,7 @@ class ACFancyButton: UIControl {
         setupSubviews()
     }
     
-    override func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutSubviews()
         
         if var imageSize = imageView.image?.size {
