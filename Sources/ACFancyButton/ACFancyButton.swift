@@ -18,6 +18,7 @@ open class ACFancyButton: UIControl {
     
     public var buttonCornerRadius: CGFloat?
     
+    // Duration of each group animation loop
     public var animationDuration: CGFloat? {
         didSet{
             if let duration = animationDuration  {
@@ -25,6 +26,8 @@ open class ACFancyButton: UIControl {
             }
         }
     }
+    
+    // Button color schemes
     public var bakedColors: [[CGColor]]? {
         didSet{
             if let colors = bakedColors  {
