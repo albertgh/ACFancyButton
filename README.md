@@ -8,7 +8,9 @@ A customizable button with dynamic color transitions
 
 Xcode > File > Swift Packages > Add Package Dependency
 
-`https://github.com/albertgh/ACFancyButton.git`
+```
+https://github.com/albertgh/ACFancyButton.git
+```
 
 
 ## Usage
