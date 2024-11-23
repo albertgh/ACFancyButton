@@ -11,6 +11,7 @@ Xcode > File > Swift Packages > Add Package Dependency
 ```
 https://github.com/albertgh/ACFancyButton.git
 ```
+Check out example project here:  [ACFancyButtonExample-iOS.zip](https://github.com/user-attachments/files/17878726/ACFancyButtonExample-iOS.zip)
 
 
 ## Usage
