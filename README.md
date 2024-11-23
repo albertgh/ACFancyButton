@@ -3,7 +3,6 @@ A customizable button with dynamic color transitions
 
 ![2024-11-23 18-59-25 2024-11-23 19_01_04](https://github.com/user-attachments/assets/8ed1bcf6-8de0-4f85-a629-5b40a2aae4da)
 
----
 
 ## Installing
 
@@ -48,7 +47,9 @@ fButton.buttonCornerRadius = 5.0
 // Set the duration for each animation loop
 fButton.animationDuration = 2.0
 
-// Customize your own color schemes (Note: UIColor.hexStringCGColor(hex:) is a custom utility method and is not included in this package)
+// Customize your own color schemes 
+// (Note: UIColor.hexStringCGColor(hex:) is a custom utility method 
+// and is not included in this package)
 let bakedColors: [[CGColor]] = [
     [UIColor.hexStringCGColor(hex: "fc1414"),
      UIColor.hexStringCGColor(hex: "142bfc")],
