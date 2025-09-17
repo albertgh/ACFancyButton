@@ -17,6 +17,8 @@ open class ACFancyButton: UIControl {
     }
     
     public var buttonCornerRadius: CGFloat?
+    public var buttonAlpha: CGFloat?
+
     
     // Duration of each group animation loop
     public var animationDuration: CGFloat? {
@@ -35,7 +37,7 @@ open class ACFancyButton: UIControl {
             }
         }
     }
-
+    
     
     public var imageViewScale: CGFloat = 1.0 {
         didSet{
@@ -47,10 +49,25 @@ open class ACFancyButton: UIControl {
         }
     }
     
-    public let imageView: UIImageView = UIImageView(frame: .zero)
+    public let visualEffectView: UIVisualEffectView = {
+        var effect: UIVisualEffect = UIBlurEffect(style: .systemUltraThinMaterial)
+        if  #available(iOS 26.0, *) {
+            effect = UIGlassEffect(style: .clear)
+        }
+        let view = UIVisualEffectView(effect: effect)
+        view.isUserInteractionEnabled = false
+        return view
+    }()
     
     let bgLayer: ACFancyButtonAnimationLayer = ACFancyButtonAnimationLayer()
-
+    
+    // You should only set one of imageView or titleView.
+    public let imageView: UIImageView = UIImageView(frame: .zero)
+    
+    // You should only set one of imageView or titleView.
+    public let titleView: UILabel = UILabel()
+    
+    
     // MARK: Life Cycle
     deinit {
     }
@@ -74,19 +91,33 @@ open class ACFancyButton: UIControl {
         }
         
         bgLayer.frame = bounds
+        bgLayer.opacity = Float(buttonAlpha ?? 1.0)
         
-
         let theCornerRadius = buttonCornerRadius ?? (bounds.size.height / 2.0)
         bgLayer.cornerRadius = theCornerRadius
+        
+        
+        visualEffectView.frame = bounds
+        visualEffectView.layer.cornerRadius = theCornerRadius
+        visualEffectView.layer.masksToBounds = true // This is crucial for rounding the corners
+        
+        
+        titleView.frame = bounds
+        titleView.textAlignment = .center
     }
 }
 
 // MARK: setup
 extension ACFancyButton {
     private func setupSubviews() {
+        addSubview(visualEffectView)
+
         layer.addSublayer(bgLayer)
         
         addSubview(imageView)
         imageView.contentMode = .scaleAspectFit
+        
+        addSubview(titleView)
+        titleView.backgroundColor = .clear
     }
 }

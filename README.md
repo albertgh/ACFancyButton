@@ -1,7 +1,7 @@
 # ACFancyButton
 A customizable button with dynamic color transitions
 
-![2024-11-23 18-59-25 2024-11-23 19_01_04](https://github.com/user-attachments/assets/8ed1bcf6-8de0-4f85-a629-5b40a2aae4da)
+![example](https://github.com/user-attachments/assets/3444ee30-e44c-4c54-be00-1c299070a8ee)
 
 
 ## Installing
@@ -21,10 +21,19 @@ import ACFancyButton
 
 // Create an ACFancy button instance
 let fButton = ACFancyButton()
-fButton.tintColor = .white
+
+button.titleView.text = "ACFancyButton"
+button.titleView.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+button.titleView.textColor = .white
+
+/**
+ // You should only set one of imageView or titleView.
+button.tintColor = .white
 let btnImgConfig = UIImage.SymbolConfiguration(pointSize: 50, weight: .regular)
 let btnImg = UIImage(systemName: "tray.fill", withConfiguration: btnImgConfig)
-fButton.imageView.image = btnImg
+button.imageView.image = btnImg
+ */
+
 
 // Add the button to your view and set up its layout
 self.view.addSubview(fButton)
@@ -44,6 +53,9 @@ fButton.startAnimation()
 ## Customization
 
 ```swift
+// If the glass effect is not needed, you can replace it with another effect.
+button.visualEffectView.effect = UIBlurEffect(style: .systemUltraThinMaterial)
+
 // Customize the button's corner radius
 fButton.buttonCornerRadius = 5.0
 
