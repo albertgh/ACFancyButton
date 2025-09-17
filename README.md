@@ -53,6 +53,9 @@ fButton.startAnimation()
 ## Customization
 
 ```swift
+// Adjust the button's alpha for the glass effect
+button.buttonAlpha = 0.5
+
 // If the glass effect is not needed, you can replace it with another effect.
 button.visualEffectView.effect = UIBlurEffect(style: .systemUltraThinMaterial)
 
