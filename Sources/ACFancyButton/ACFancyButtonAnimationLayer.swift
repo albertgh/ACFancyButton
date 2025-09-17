@@ -50,21 +50,21 @@ public final class ACFancyButtonAnimationLayer: CAGradientLayer {
     }
     
     
-    func startAnimation() {
+    public func startAnimation() {
         startColorAnimation()
         startPointAnimation()
     }
-    func stopAnimation() {
+    public func stopAnimation() {
         removeAllAnimations()
     }
     
     // MARK: property
-    var animationDuration: CGFloat = ACFBLayerConstant.animationDuration {
+    public var animationDuration: CGFloat = ACFBLayerConstant.animationDuration {
         didSet {
             colorsAnimation.duration = animationDuration
         }
     }
-    var bakedColors: [[CGColor]] = ACFBLayerConstant.bakedColors
+    public var bakedColors: [[CGColor]] = ACFBLayerConstant.bakedColors
 
     
     let animationKeyTimes = ACFBLayerConstant.animationKeyTimes
