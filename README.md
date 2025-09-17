@@ -1,7 +1,7 @@
 # ACFancyButton
 A customizable button with dynamic color transitions
 
-![example](https://github.com/user-attachments/assets/3444ee30-e44c-4c54-be00-1c299070a8ee)
+![example](https://github.com/user-attachments/assets/33a03ea9-3780-41b6-8120-f2f8bfee6982)
 
 
 ## Installing
