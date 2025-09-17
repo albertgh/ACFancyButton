@@ -36,22 +36,19 @@ private struct ACFBLayerConstant {
 }
 
 public final class ACFancyButtonAnimationLayer: CAGradientLayer {
-    
-    // Explicit designated initializer
+    // MARK: Life Cycle
+    public required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     public override init() {
         super.init()
-        // your setup code if needed
+        setupLayer()
     }
-    
-    // Required init for CALayer subclasses
-    public required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-    
-    // Optional: also expose init(layer:) if needed
     public override init(layer: Any) {
         super.init(layer: layer)
+        setupLayer()
     }
+    
     
     func startAnimation() {
         startColorAnimation()
@@ -81,18 +78,7 @@ public final class ACFancyButtonAnimationLayer: CAGradientLayer {
     
     let colorsAnimation = CAKeyframeAnimation(keyPath: "colors")
         
-    // MARK: Life Cycle
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    override init() {
-        super.init()
-        setupLayer()
-    }
-    override init(layer: Any) {
-        super.init(layer: layer)
-        setupLayer()
-    }
+    
 }
 
 // MARK: setup
@@ -115,7 +101,7 @@ extension ACFancyButtonAnimationLayer {
 
 // MARK: Delegate
 extension ACFancyButtonAnimationLayer: CAAnimationDelegate {
-    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+    public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         removeAnimation(forKey: ACFBLayerConstant.ACFBAnimationKey)
         startColorAnimation()
     }
