@@ -35,7 +35,24 @@ private struct ACFBLayerConstant {
     static let ACFBPointAnimationKey = "ACFBPointAnimationKey"
 }
 
-final class ACFancyButtonAnimationLayer: CAGradientLayer {
+public final class ACFancyButtonAnimationLayer: CAGradientLayer {
+    
+    // Explicit designated initializer
+    public override init() {
+        super.init()
+        // your setup code if needed
+    }
+    
+    // Required init for CALayer subclasses
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    // Optional: also expose init(layer:) if needed
+    public override init(layer: Any) {
+        super.init(layer: layer)
+    }
+    
     func startAnimation() {
         startColorAnimation()
         startPointAnimation()
